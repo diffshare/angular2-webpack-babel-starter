@@ -8,7 +8,8 @@
     "build": "webpack --progress --profile --colors --display-error-details --display-cached",
     "server": "webpack-dev-server --progress --profile --colors --display-error-details --display-cached --content-base src/",
     "start": "npm run server",
-    "test": "npm run build"
+    "test": "npm run build",
+    "postinstall": "typings install"
   },
   "repository": {
     "type": "git",
