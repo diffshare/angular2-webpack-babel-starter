@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 
 module.exports = {
 
@@ -43,9 +44,16 @@ module.exports = {
     },
 
     plugins: [
+        new ForkCheckerPlugin(),
         new webpack.optimize.OccurenceOrderPlugin(true),
-        new webpack.optimize.DedupePlugin(),
-        new HtmlWebpackPlugin({template: 'src/index.slim', inject: true})
+        //new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['vendor', 'polyfills']
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/index.slim',
+            chunksSortMode: 'dependency'
+        })
     ],
 
     node: {global: 'window', progress: false, crypto: 'empty', module: false, clearImmediate: false, setImmediate: false}
