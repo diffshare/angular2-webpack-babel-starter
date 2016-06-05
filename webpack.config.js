@@ -4,6 +4,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 
     entry: {
+        'vendor': './src/vendor.ts',
+        'polyfills': './src/polyfills.ts',
         'main': './src/main.ts'
     },
 
@@ -26,7 +28,7 @@ module.exports = {
             {test: /\.js$/, loader: "source-map-loader", exclude: [/rxjs/]}
         ],
         loaders: [
-            {test: /\.ts$/, loader: 'ts-loader'},
+            {test: /\.ts$/, loader: 'awesome-typescript-loader'},
 
             {test: /\.html$/, loader: 'raw-loader'},
 
