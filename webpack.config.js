@@ -56,5 +56,15 @@ module.exports = {
         })
     ],
 
-    node: {global: 'window', progress: false, crypto: 'empty', module: false, clearImmediate: false, setImmediate: false}
+    node: {global: 'window', progress: false, crypto: 'empty', module: false, clearImmediate: false, setImmediate: false},
+
+    devServer: {
+        port: 8080,
+        historyApiFallback: true,
+        watchOptions: {
+            aggregateTimeout: 300,
+            poll: 1000
+        },
+        outputPath: 'dist'
+    }
 };
