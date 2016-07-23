@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "A skeleton Angular 2 app built with Slm and Webpack.",
   "scripts": {
-    "clean": "npm cache clean && rimraf node_modules dist",
+    "rimraf": "rimraf",
+
+    "clean": "npm cache clean && npm run rimraf -- node_modules dist",
     "watch": "webpack --watch --progress --profile --coloes --display-error-details --display-cached",
     "build": "webpack --progress --profile --colors --display-error-details --display-cached",
     "server": "webpack-dev-server --progress --profile --colors --display-error-details --display-cached --content-base src/",
