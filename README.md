@@ -7,7 +7,7 @@ A skeleton Angular 2 app built with Slm and Webpack.
 
 ```bash
 npm install
-npm run server
+npm start
 ```
 
 # Inspiration
